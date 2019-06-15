@@ -6,14 +6,14 @@ router.get('/',(req,res)=>{
     res.send("This is root api get ");
 });
 
-router.post('/',(req,res)=>{
+router.post('/',(req,res,next)=>{
     console.log(req.body);
     //let emp = new Emp(req.body);
     //emp.save();
     Emp.create(req.body).then((emp)=>{
         console.log('While saving ');
         res.send(emp);
-    });
+    }).catch(next);
     // res.send({
     //     "Method":"POST",
     //     "name":req.body.name,
