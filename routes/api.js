@@ -7,7 +7,12 @@ router.get('/',(req,res)=>{
 });
 
 router.post('/',(req,res)=>{
-    res.send("This is root api post");
+    console.log(req.body);
+    res.send({
+        "Method":"POST",
+        "name":req.body.name,
+        "age":req.body.age,
+    });
 });
 
 router.put('/:id',(req,res)=>{
