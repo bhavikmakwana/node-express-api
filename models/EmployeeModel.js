@@ -10,7 +10,7 @@ const employeeSchema  = new Scheema({
         type : String,
         
     },
-    name:{
+    available:{
         type : Boolean,
         default :false
     }
